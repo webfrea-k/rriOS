@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		477EFEC9204F0287004F22F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEC8204F0287004F22F6 /* AppDelegate.swift */; };
+		477EFECB204F0287004F22F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFECA204F0287004F22F6 /* ViewController.swift */; };
+		477EFECE204F0287004F22F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477EFECC204F0287004F22F6 /* Main.storyboard */; };
+		477EFED0204F0287004F22F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477EFECF204F0287004F22F6 /* Assets.xcassets */; };
+		477EFED3204F0287004F22F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */; };
+		477EFEDE204F0287004F22F6 /* Rain_RadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEDD204F0287004F22F6 /* Rain_RadarTests.swift */; };
+		477EFEE9204F0287004F22F6 /* Rain_RadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEE8204F0287004F22F6 /* Rain_RadarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477EFEDA204F0287004F22F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 477EFEBD204F0287004F22F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477EFEC4204F0287004F22F6;
+			remoteInfo = "Rain Radar";
+		};
+		477EFEE5204F0287004F22F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 477EFEBD204F0287004F22F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477EFEC4204F0287004F22F6;
+			remoteInfo = "Rain Radar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		477EFEC5204F0287004F22F6 /* Rain Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rain Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		477EFEC8204F0287004F22F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		477EFECA204F0287004F22F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		477EFECD204F0287004F22F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		477EFECF204F0287004F22F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		477EFED2204F0287004F22F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		477EFED4204F0287004F22F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477EFED9204F0287004F22F6 /* Rain RadarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rain RadarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		477EFEDD204F0287004F22F6 /* Rain_RadarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rain_RadarTests.swift; sourceTree = "<group>"; };
+		477EFEDF204F0287004F22F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477EFEE4204F0287004F22F6 /* Rain RadarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rain RadarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		477EFEE8204F0287004F22F6 /* Rain_RadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rain_RadarUITests.swift; sourceTree = "<group>"; };
+		477EFEEA204F0287004F22F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		477EFEC2204F0287004F22F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFED6204F0287004F22F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFEE1204F0287004F22F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		477EFEBC204F0287004F22F6 = {
+			isa = PBXGroup;
+			children = (
+				477EFEC7204F0287004F22F6 /* Rain Radar */,
+				477EFEDC204F0287004F22F6 /* Rain RadarTests */,
+				477EFEE7204F0287004F22F6 /* Rain RadarUITests */,
+				477EFEC6204F0287004F22F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		477EFEC6204F0287004F22F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				477EFEC5204F0287004F22F6 /* Rain Radar.app */,
+				477EFED9204F0287004F22F6 /* Rain RadarTests.xctest */,
+				477EFEE4204F0287004F22F6 /* Rain RadarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		477EFEC7204F0287004F22F6 /* Rain Radar */ = {
+			isa = PBXGroup;
+			children = (
+				477EFEC8204F0287004F22F6 /* AppDelegate.swift */,
+				477EFECA204F0287004F22F6 /* ViewController.swift */,
+				477EFECC204F0287004F22F6 /* Main.storyboard */,
+				477EFECF204F0287004F22F6 /* Assets.xcassets */,
+				477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */,
+				477EFED4204F0287004F22F6 /* Info.plist */,
+			);
+			path = "Rain Radar";
+			sourceTree = "<group>";
+		};
+		477EFEDC204F0287004F22F6 /* Rain RadarTests */ = {
+			isa = PBXGroup;
+			children = (
+				477EFEDD204F0287004F22F6 /* Rain_RadarTests.swift */,
+				477EFEDF204F0287004F22F6 /* Info.plist */,
+			);
+			path = "Rain RadarTests";
+			sourceTree = "<group>";
+		};
+		477EFEE7204F0287004F22F6 /* Rain RadarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				477EFEE8204F0287004F22F6 /* Rain_RadarUITests.swift */,
+				477EFEEA204F0287004F22F6 /* Info.plist */,
+			);
+			path = "Rain RadarUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		477EFEC4204F0287004F22F6 /* Rain Radar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477EFEED204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain Radar" */;
+			buildPhases = (
+				477EFEC1204F0287004F22F6 /* Sources */,
+				477EFEC2204F0287004F22F6 /* Frameworks */,
+				477EFEC3204F0287004F22F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rain Radar";
+			productName = "Rain Radar";
+			productReference = 477EFEC5204F0287004F22F6 /* Rain Radar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		477EFED8204F0287004F22F6 /* Rain RadarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477EFEF0204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain RadarTests" */;
+			buildPhases = (
+				477EFED5204F0287004F22F6 /* Sources */,
+				477EFED6204F0287004F22F6 /* Frameworks */,
+				477EFED7204F0287004F22F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477EFEDB204F0287004F22F6 /* PBXTargetDependency */,
+			);
+			name = "Rain RadarTests";
+			productName = "Rain RadarTests";
+			productReference = 477EFED9204F0287004F22F6 /* Rain RadarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		477EFEE3204F0287004F22F6 /* Rain RadarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477EFEF3204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain RadarUITests" */;
+			buildPhases = (
+				477EFEE0204F0287004F22F6 /* Sources */,
+				477EFEE1204F0287004F22F6 /* Frameworks */,
+				477EFEE2204F0287004F22F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477EFEE6204F0287004F22F6 /* PBXTargetDependency */,
+			);
+			name = "Rain RadarUITests";
+			productName = "Rain RadarUITests";
+			productReference = 477EFEE4204F0287004F22F6 /* Rain RadarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		477EFEBD204F0287004F22F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Simon Hočevar";
+				TargetAttributes = {
+					477EFEC4204F0287004F22F6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					477EFED8204F0287004F22F6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 477EFEC4204F0287004F22F6;
+					};
+					477EFEE3204F0287004F22F6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 477EFEC4204F0287004F22F6;
+					};
+				};
+			};
+			buildConfigurationList = 477EFEC0204F0287004F22F6 /* Build configuration list for PBXProject "Rain Radar" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 477EFEBC204F0287004F22F6;
+			productRefGroup = 477EFEC6204F0287004F22F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				477EFEC4204F0287004F22F6 /* Rain Radar */,
+				477EFED8204F0287004F22F6 /* Rain RadarTests */,
+				477EFEE3204F0287004F22F6 /* Rain RadarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		477EFEC3204F0287004F22F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477EFED3204F0287004F22F6 /* LaunchScreen.storyboard in Resources */,
+				477EFED0204F0287004F22F6 /* Assets.xcassets in Resources */,
+				477EFECE204F0287004F22F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFED7204F0287004F22F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFEE2204F0287004F22F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		477EFEC1204F0287004F22F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477EFECB204F0287004F22F6 /* ViewController.swift in Sources */,
+				477EFEC9204F0287004F22F6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFED5204F0287004F22F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477EFEDE204F0287004F22F6 /* Rain_RadarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477EFEE0204F0287004F22F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477EFEE9204F0287004F22F6 /* Rain_RadarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		477EFEDB204F0287004F22F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477EFEC4204F0287004F22F6 /* Rain Radar */;
+			targetProxy = 477EFEDA204F0287004F22F6 /* PBXContainerItemProxy */;
+		};
+		477EFEE6204F0287004F22F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477EFEC4204F0287004F22F6 /* Rain Radar */;
+			targetProxy = 477EFEE5204F0287004F22F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		477EFECC204F0287004F22F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477EFECD204F0287004F22F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477EFED2204F0287004F22F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		477EFEEB204F0287004F22F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		477EFEEC204F0287004F22F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		477EFEEE204F0287004F22F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain Radar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-Radar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477EFEEF204F0287004F22F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain Radar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-Radar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		477EFEF1204F0287004F22F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain RadarTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-RadarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rain Radar.app/Rain Radar";
+			};
+			name = Debug;
+		};
+		477EFEF2204F0287004F22F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain RadarTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-RadarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rain Radar.app/Rain Radar";
+			};
+			name = Release;
+		};
+		477EFEF4204F0287004F22F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain RadarUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-RadarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Rain Radar";
+			};
+			name = Debug;
+		};
+		477EFEF5204F0287004F22F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Rain RadarUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-RadarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Rain Radar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		477EFEC0204F0287004F22F6 /* Build configuration list for PBXProject "Rain Radar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477EFEEB204F0287004F22F6 /* Debug */,
+				477EFEEC204F0287004F22F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477EFEED204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain Radar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477EFEEE204F0287004F22F6 /* Debug */,
+				477EFEEF204F0287004F22F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477EFEF0204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain RadarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477EFEF1204F0287004F22F6 /* Debug */,
+				477EFEF2204F0287004F22F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477EFEF3204F0287004F22F6 /* Build configuration list for PBXNativeTarget "Rain RadarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477EFEF4204F0287004F22F6 /* Debug */,
+				477EFEF5204F0287004F22F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 477EFEBD204F0287004F22F6 /* Project object */;
+}
