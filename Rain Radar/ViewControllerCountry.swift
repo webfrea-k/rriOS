@@ -9,22 +9,29 @@
 import UIKit
 import GoogleMaps
 import Kingfisher
+import CircleProgressBar
+
 var timer = Timer()
 var isRunning = true
-var array = [String]()
+var arrayImages = [String]()
+var arrayTimes = [String]()
 var ind = 0
+var progressRing : CircleProgressBar!
+
 let southWest = CLLocationCoordinate2D(latitude: 47.407, longitude: 17.44)
 let northEast = CLLocationCoordinate2D(latitude: 44.657, longitude: 12.1)
 let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
 
 class ViewControllerCountry: UIViewController {
+  
     @IBOutlet weak var bottomview: UIView!
-    
-    @IBAction func bottomsheets(_ sender: Any) {
+    @IBOutlet weak var mapview: GMSMapView!
+    @IBOutlet weak var startstop: UIButton!
+    /*@IBAction func bottomsheets(_ sender: Any) {
         bottomview.frame = CGRect(x:0, y: 0, width:0, height:bottomview.frame.height + 350)
 
-    }
-    @IBOutlet weak var startstop: UIButton!
+    }*/
+    
     @IBAction func startstop(_ sender: Any) {
         if(isRunning)
         {
@@ -39,26 +46,27 @@ class ViewControllerCountry: UIViewController {
         isRunning = !isRunning
         
     }
-    @IBOutlet weak var mapview: GMSMapView!
+    
     override func viewDidLoad() {
-        scheduledTimerWithTimeInterval()
         super.viewDidLoad()
-        array = getImageUrls()
-        let url = URL(string: array[0])
+        scheduledTimerWithTimeInterval()
+        let (imageurls,imagetimes) = getImageUrls()
+        arrayImages = imageurls
+        arrayTimes = imagetimes
         let southWest = CLLocationCoordinate2D(latitude: 47.407, longitude: 17.44)
         let northEast = CLLocationCoordinate2D(latitude: 44.657, longitude: 12.1)
-        let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
-        
-        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil)
-        {
-            (image, error, cacheType, imageURL) -> () in image
-            let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: image)
-            overlay.bearing = 0
-            overlay.map = self.mapview
-        }
         let camera = GMSCameraPosition.camera(withLatitude: 46.018851, longitude: 14.675335, zoom: 7.1)
         self.mapview.camera = camera
-
+        
+        progressRing = CircleProgressBar.init(frame: CGRect(x: self.view.frame.width/2-30, y: self.view.frame.height-150, width: 60, height: 60))
+        progressRing.hintHidden = false
+        progressRing.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        progressRing.progressBarProgressColor = UIColor(red: 0.2, green: 0.2, blue: 1.0, alpha: 1.0)
+        progressRing.progressBarWidth = 10
+        progressRing.startAngle = -90
+        progressRing.hintTextFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+        
+        self.view.addSubview(progressRing!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +74,7 @@ class ViewControllerCountry: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getImageUrls() -> Array<String>
+    func getImageUrls() -> ([String],[String])
     {
         var imageUrls = [String]()
         var imageTimes = [String]()
@@ -77,72 +85,76 @@ class ViewControllerCountry: UIViewController {
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         let minutes = components.minute!
         
-        if (minutes >= 0 && minutes <= 11)
+        if (minutes >= 0 && minutes < 11)
         {
             components.hour = (components.hour!-1)
             components.minute = 50
         }
-        if (minutes >= 11 && minutes <= 21)
+        if (minutes >= 11 && minutes < 21)
         {
             components.minute = 0
         }
-        if (minutes >= 21 && minutes <= 31)
+        if (minutes >= 21 && minutes < 31)
         {
             components.minute = 10
         }
-        if (minutes >= 31 && minutes <= 41)
+        if (minutes >= 31 && minutes < 41)
         {
             components.minute = 20
         }
-        if (minutes >= 41 && minutes <= 51)
+        if (minutes >= 41 && minutes < 51)
         {
             components.minute = 30
         }
-        if (minutes >= 51 && minutes <= 60)
+        if (minutes >= 51 && minutes < 60)
         {
             components.minute = 40
         }
-        components.minute = components.minute! - 60
-        
+ 
         let baseUrl = "http://meteo.arso.gov.si/uploads/probase/www/nowcast/inca/inca_si0zm_";
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date
-        formatter.dateFormat = "yyyyMMdd-HHmm"
+        let formatter1 = DateFormatter()
+        let formatter2 = DateFormatter()
+    
+        formatter1.dateFormat = "yyyyMMdd-HHmm"
+        formatter2.dateFormat = "HH:mm"
+        
+        formatter1.timeZone = TimeZone(abbreviation: "UTC")
+        let timeZone = TimeZone.autoupdatingCurrent.identifier as String
+        formatter2.timeZone = TimeZone(identifier: timeZone)
         var date = gregorian.date(from: components)
         date?.addTimeInterval(-imageCount * 10.0 * 60.0)
         for _ in 0...Int(imageCount)
         {
-            let formattedDate = formatter.string(from: date!)
+            let formattedDate = formatter1.string(from: date!)
             let theUrl = baseUrl + formattedDate + "+0000.png";
             imageUrls.append(theUrl)
-            imageTimes.append(formattedDate)
+            imageTimes.append(formatter2.string(from: date!))
            
             date!.addTimeInterval(10.0 * 60)
         }
-        return imageUrls
+        return (imageUrls, imageTimes)
     }
 
     func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        // Scheduling timer to Call the function "updateCounting" with the interval of 0.6 seconds
         timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
     
     @objc func updateCounting(){
-        print("counting..")
+        print("showing animation...")
         if(ind < 11)
         {
-            let url = URL(string: array[ind])
-            
-            
-            KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil)
-            {
-                (image, error, cacheType, imageURL) -> () in image
+            let url = URL(string: arrayImages[ind])
+            progressRing.setHintTextGenerationBlock { (progress) -> String? in
+                return String.init(format:arrayTimes[ind], arguments: [progress])
+            }
+            progressRing.setProgress(CGFloat(ind)/10, animated: true, duration: 0.4)
+            KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                 let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: image)
                 overlay.bearing = 0
                 self.mapview.clear()
                 overlay.map = self.mapview
-                
-            }
+            })
             ind = ind+1
         }
         else

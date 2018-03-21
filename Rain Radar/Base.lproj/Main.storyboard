@@ -20,8 +20,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain Radar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbZ-27-Btv" userLabel="Rain Radar">
+                                <rect key="frame" x="16" y="20" width="343" height="36"/>
+                                <accessibility key="accessibilityConfiguration" label="Rain Radar"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-TU-Bfp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="71" id="gG7-nb-Vy2" customClass="ViewControllerTableViewCell" customModule="Rain_Radar" customModuleProvider="target">
@@ -65,19 +72,34 @@
                                     <outlet property="delegate" destination="eSm-S9-mRi" id="FVe-cM-tAP"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ASY-HH-lMj">
+                                <rect key="frame" x="0.0" y="71" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="GOw-Tx-j86"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="UDi-la-3UF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="top" secondItem="Cod-IE-ZZL" secondAttribute="top" id="0hx-bF-omI"/>
-                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="leading" secondItem="Cod-IE-ZZL" secondAttribute="leading" id="Nor-Jx-OiU"/>
-                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="bottom" secondItem="Cod-IE-ZZL" secondAttribute="bottom" id="ic7-o9-vI9"/>
-                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="trailing" secondItem="Cod-IE-ZZL" secondAttribute="trailing" id="kag-Zb-63x"/>
+                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="top" secondItem="ASY-HH-lMj" secondAttribute="bottom" id="BL3-aB-eDl"/>
+                            <constraint firstItem="wbZ-27-Btv" firstAttribute="leading" secondItem="Cod-IE-ZZL" secondAttribute="leading" constant="16" id="Q6G-vK-F3e"/>
+                            <constraint firstItem="ASY-HH-lMj" firstAttribute="top" secondItem="wbZ-27-Btv" secondAttribute="bottom" constant="15" id="QYE-Vy-1un"/>
+                            <constraint firstItem="wbZ-27-Btv" firstAttribute="top" secondItem="Cod-IE-ZZL" secondAttribute="top" id="WMZ-yN-vWr"/>
+                            <constraint firstItem="ASY-HH-lMj" firstAttribute="trailing" secondItem="Cod-IE-ZZL" secondAttribute="trailing" id="e3C-vI-6Sx"/>
+                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="trailing" secondItem="Cod-IE-ZZL" secondAttribute="trailing" id="epW-7y-6s8"/>
+                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="leading" secondItem="Cod-IE-ZZL" secondAttribute="leading" id="fEf-qo-6Kl"/>
+                            <constraint firstItem="ASY-HH-lMj" firstAttribute="leading" secondItem="Cod-IE-ZZL" secondAttribute="leading" id="hIR-dW-q1u"/>
+                            <constraint firstItem="T0W-TU-Bfp" firstAttribute="bottom" secondItem="Cod-IE-ZZL" secondAttribute="bottom" id="nXc-RU-8yP"/>
+                            <constraint firstItem="Cod-IE-ZZL" firstAttribute="trailing" secondItem="wbZ-27-Btv" secondAttribute="trailing" constant="16" id="r2N-4F-oQ3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cod-IE-ZZL"/>
                     </view>
                     <connections>
+                        <outlet property="searchbar" destination="ASY-HH-lMj" id="fQw-fB-riL"/>
                         <outlet property="tableView" destination="T0W-TU-Bfp" id="CE0-2R-7iy"/>
-                        <segue destination="qWg-EA-fa4" kind="show" identifier="segue" id="1TR-y4-sVC"/>
+                        <segue destination="qWg-EA-fa4" kind="showDetail" identifier="show_country" id="IBc-vL-S8O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvh-Fh-CVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,54 +115,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYx-If-eg2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="77" width="375" height="515"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-vF-jw8" userLabel="bottomView">
                                 <rect key="frame" x="0.0" y="600" width="375" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDK-1U-WAZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDK-1U-WAZ">
                                         <rect key="frame" x="322" y="16" width="32" height="30"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="startstop:" destination="qWg-EA-fa4" eventType="touchUpInside" id="yxE-Y9-87g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="may-Qp-9Qc">
-                                        <rect key="frame" x="0.0" y="16" width="294" height="30"/>
-                                        <state key="normal" title="mmm"/>
-                                        <connections>
-                                            <action selector="bottomsheets:" destination="qWg-EA-fa4" eventType="touchUpInside" id="ydz-vN-eFZ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="TDK-1U-WAZ" firstAttribute="leading" secondItem="may-Qp-9Qc" secondAttribute="trailing" constant="28" id="8CO-wT-Ban"/>
-                                    <constraint firstAttribute="bottom" secondItem="may-Qp-9Qc" secondAttribute="bottom" constant="21" id="9d1-Be-pog"/>
                                     <constraint firstAttribute="bottom" secondItem="TDK-1U-WAZ" secondAttribute="bottom" constant="21" id="RC0-ga-Fhm"/>
                                     <constraint firstAttribute="height" constant="67" id="erb-87-c18"/>
                                     <constraint firstAttribute="trailing" secondItem="TDK-1U-WAZ" secondAttribute="trailing" constant="21" id="ren-KX-3q0"/>
-                                    <constraint firstItem="may-Qp-9Qc" firstAttribute="leading" secondItem="DRy-vF-jw8" secondAttribute="leading" id="z3m-SD-DMJ"/>
-                                    <constraint firstItem="may-Qp-9Qc" firstAttribute="top" secondItem="DRy-vF-jw8" secondAttribute="top" constant="16" id="zKO-nf-iGT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-m5-btw" userLabel="topView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSW-LW-WIY">
-                                        <rect key="frame" x="19" y="20" width="48" height="30"/>
-                                        <state key="normal" title="&lt; Back"/>
-                                        <connections>
-                                            <segue destination="eSm-S9-mRi" kind="show" id="dzt-gJ-yc3"/>
-                                        </connections>
-                                    </button>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udN-Bd-6Qd">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem title="Rain Radar" id="hwU-eC-Ldt">
+                                                <barButtonItem key="backBarButtonItem" title="Back" id="VYh-yy-9uZ"/>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xSW-LW-WIY" secondAttribute="bottom" constant="19" id="W3S-5d-pfa" userLabel="bottom = Back.bottom"/>
-                                    <constraint firstAttribute="height" constant="69" id="gfk-Ok-sKY" userLabel="height = 67"/>
-                                    <constraint firstItem="xSW-LW-WIY" firstAttribute="leading" secondItem="ErM-m5-btw" secondAttribute="leading" constant="19" id="ygq-PG-S8Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="udN-Bd-6Qd" secondAttribute="bottom" id="baL-nQ-glL"/>
+                                    <constraint firstAttribute="height" constant="100" id="gfk-Ok-sKY" userLabel="height =100"/>
+                                    <constraint firstAttribute="trailing" secondItem="udN-Bd-6Qd" secondAttribute="trailing" id="idd-2I-a1Y"/>
+                                    <constraint firstItem="udN-Bd-6Qd" firstAttribute="leading" secondItem="ErM-m5-btw" secondAttribute="leading" id="oUi-ap-8mR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -154,7 +167,7 @@
                             <constraint firstItem="DRy-vF-jw8" firstAttribute="leading" secondItem="3bN-S0-ZYV" secondAttribute="leading" id="biL-Bc-P9e"/>
                             <constraint firstItem="DRy-vF-jw8" firstAttribute="top" secondItem="NYx-If-eg2" secondAttribute="bottom" constant="8" id="eEr-XD-cKa"/>
                             <constraint firstItem="DRy-vF-jw8" firstAttribute="trailing" secondItem="3bN-S0-ZYV" secondAttribute="trailing" id="fvY-Y3-VWi"/>
-                            <constraint firstItem="NYx-If-eg2" firstAttribute="top" secondItem="ErM-m5-btw" secondAttribute="bottom" constant="8" id="n0o-ND-0pF" userLabel="Mapview.top = View.bottom"/>
+                            <constraint firstItem="NYx-If-eg2" firstAttribute="top" secondItem="ErM-m5-btw" secondAttribute="bottom" id="n0o-ND-0pF" userLabel="Mapview.top = View.bottom"/>
                             <constraint firstItem="ErM-m5-btw" firstAttribute="trailing" secondItem="3bN-S0-ZYV" secondAttribute="trailing" id="ou1-L0-Bje"/>
                             <constraint firstItem="ErM-m5-btw" firstAttribute="leading" secondItem="3bN-S0-ZYV" secondAttribute="leading" id="qbi-6r-Cs0"/>
                         </constraints>
