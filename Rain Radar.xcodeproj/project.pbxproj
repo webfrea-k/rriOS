@@ -23,6 +23,9 @@
 		477EFED3204F0287004F22F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */; };
 		477EFEDE204F0287004F22F6 /* Rain_RadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEDD204F0287004F22F6 /* Rain_RadarTests.swift */; };
 		477EFEE9204F0287004F22F6 /* Rain_RadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEE8204F0287004F22F6 /* Rain_RadarUITests.swift */; };
+		478AB137206401400077649F /* CircularProgressClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AB136206401400077649F /* CircularProgressClock.swift */; };
+		478AB13B206401CE0077649F /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AB13A206401CE0077649F /* BorderLayer.swift */; };
+		478AB13D206402160077649F /* CircularProgressClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478AB13C206402160077649F /* CircularProgressClock.xib */; };
 		501F19876F1878FDF4591504 /* Pods_Rain_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C6EEC991922CE821FD5885 /* Pods_Rain_Radar.framework */; };
 		759C953B9002815C48D333DB /* Pods_Rain_RadarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,9 @@
 		477EFEE4204F0287004F22F6 /* Rain RadarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rain RadarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		477EFEE8204F0287004F22F6 /* Rain_RadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rain_RadarUITests.swift; sourceTree = "<group>"; };
 		477EFEEA204F0287004F22F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		478AB136206401400077649F /* CircularProgressClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressClock.swift; sourceTree = "<group>"; };
+		478AB13A206401CE0077649F /* BorderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
+		478AB13C206402160077649F /* CircularProgressClock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressClock.xib; sourceTree = "<group>"; };
 		5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296EB8FCB70B231FD847C2F /* Pods_Rain_RadarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935C424F54C4F198C5D4947 /* Pods-Rain RadarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rain RadarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rain RadarUITests/Pods-Rain RadarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 				477EFECF204F0287004F22F6 /* Assets.xcassets */,
 				477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */,
 				477EFED4204F0287004F22F6 /* Info.plist */,
+				478AB136206401400077649F /* CircularProgressClock.swift */,
+				478AB13C206402160077649F /* CircularProgressClock.xib */,
+				478AB13A206401CE0077649F /* BorderLayer.swift */,
 			);
 			path = "Rain Radar";
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 				470453D72053F74B00C3082E /* Austria-icon.png in Resources */,
 				470453D82053F74B00C3082E /* Croatia-icon.png in Resources */,
 				477EFECE204F0287004F22F6 /* Main.storyboard in Resources */,
+				478AB13D206402160077649F /* CircularProgressClock.xib in Resources */,
 				470453CC2053E0B700C3082E /* Slovenia-icon.png in Resources */,
 				470453D52053F74B00C3082E /* Italy-icon.png in Resources */,
 				470453DA2053F77100C3082E /* Hungary-icon.png in Resources */,
@@ -496,6 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				477EFECB204F0287004F22F6 /* ViewController.swift in Sources */,
+				478AB13B206401CE0077649F /* BorderLayer.swift in Sources */,
+				478AB137206401400077649F /* CircularProgressClock.swift in Sources */,
 				477EFEC9204F0287004F22F6 /* AppDelegate.swift in Sources */,
 				470453CE2053E25100C3082E /* ViewControllerTableViewCell.swift in Sources */,
 				470453DE20542F0E00C3082E /* ViewControllerCountry.swift in Sources */,

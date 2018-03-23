@@ -114,8 +114,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYx-If-eg2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="100" width="375" height="492"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYx-If-eg2" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="100" width="375" height="434"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-vF-jw8" userLabel="bottomView">
@@ -126,6 +126,14 @@
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="startstop:" destination="qWg-EA-fa4" eventType="touchUpInside" id="yxE-Y9-87g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTS-fy-ymv">
+                                        <rect key="frame" x="27" y="16" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="back:" destination="qWg-EA-fa4" eventType="touchUpInside" id="4kG-qW-A0z"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -156,6 +164,10 @@
                                     <constraint firstItem="udN-Bd-6Qd" firstAttribute="leading" secondItem="ErM-m5-btw" secondAttribute="leading" id="oUi-ap-8mR"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1g2-mq-JXa" customClass="CircularProgressClock" customModule="Rain_Radar" customModuleProvider="target">
+                                <rect key="frame" x="151" y="574" width="73" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" label="root_country_view"/>
@@ -175,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomview" destination="DRy-vF-jw8" id="sdd-R1-P5b"/>
+                        <outlet property="cpc" destination="1g2-mq-JXa" id="Ucp-22-08T"/>
                         <outlet property="mapview" destination="NYx-If-eg2" id="yOS-c2-9sl"/>
                         <outlet property="startstop" destination="TDK-1U-WAZ" id="ECL-hl-mly"/>
                     </connections>
