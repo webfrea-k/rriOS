@@ -179,17 +179,16 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print("it did tap it!")
-        print(marker.userData)
-        
         let alert = UIAlertController(title: marker.title, message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
     
-        var imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: alert.view.bounds.size.width - 10 * 4.0, height: alert.view.bounds.size.width-20))
-        let url = URL(string: marker.userData as! String)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: alert.view.bounds.size.width - 10 * 4.0, height: alert.view.bounds.size.width-30))
+        let urlWithCacheBurner = marker.userData as! String + "?t=" + String(Int(Date().timeIntervalSince1970 * 1000))
+        
+        let url = URL(string: urlWithCacheBurner as! String)
         imageView.kf.setImage(with: url)
         alert.view.addSubview(imageView)
-        var height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.70)
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.70)
         
         alert.view.addConstraint(height)
         self.present(alert, animated: true, completion: nil)

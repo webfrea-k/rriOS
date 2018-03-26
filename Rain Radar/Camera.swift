@@ -66,10 +66,6 @@ class Items: Mappable {
     }
 }
 
-
-
-
-
 class Camera: Mappable {
     var text: String?
     var image: String?
