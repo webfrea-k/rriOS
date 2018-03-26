@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 import Kingfisher
 import CircleProgressBar
+import Alamofire
+import AlamofireObjectMapper
 
 var timer = Timer()
 var isRunning = true
@@ -22,9 +24,26 @@ let southWest = CLLocationCoordinate2D(latitude: 47.407, longitude: 17.44)
 let northEast = CLLocationCoordinate2D(latitude: 44.657, longitude: 12.1)
 let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
 
-class ViewControllerCountry: UIViewController {
+class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
   
- 
+    @IBAction func cameras(_ sender: Any) {
+        startStopAction()
+        self.mapview.clear()
+        let URL = "https://opendata.si/promet/cameras/"
+        Alamofire.request(URL).responseObject { (response: DataResponse<CameraWrapper>) in
+            let weatherResponse = response.result.value
+            for x in (weatherResponse?.Contents?.first?.Data?.Items)!
+            {
+                //print(x.camera?.first?.image)
+                let position = CLLocationCoordinate2D(latitude: x.y_wgs,longitude: x.x_wgs)
+                let marker = GMSMarker(position: position)
+                marker.userData = x.camera?.first?.image
+                marker.title = x.title
+                marker.map = self.mapview
+            }
+        }
+    }
+    
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: {
             timer.invalidate()
@@ -40,18 +59,7 @@ class ViewControllerCountry: UIViewController {
     }*/
     
     @IBAction func startstop(_ sender: Any) {
-        if(isRunning)
-        {
-            timer.invalidate()
-            startstop.setTitle("Start", for: .normal)
-        }
-        else
-        {
-            scheduledTimerWithTimeInterval()
-            startstop.setTitle("Stop", for: .normal)
-        }
-        isRunning = !isRunning
-        
+        startStopAction()
     }
     
     override func viewDidLoad() {
@@ -62,6 +70,7 @@ class ViewControllerCountry: UIViewController {
         arrayTimes = imagetimes
         let camera = GMSCameraPosition.camera(withLatitude: 46.018851, longitude: 14.675335, zoom: 7.1)
         self.mapview.camera = camera
+        self.mapview.delegate = self
    
     }
 
@@ -154,5 +163,37 @@ class ViewControllerCountry: UIViewController {
             ind = 0
         }
     }
-
+    func startStopAction()
+    {
+        if(isRunning)
+        {
+            timer.invalidate()
+            startstop.setTitle("Start", for: .normal)
+        }
+        else
+        {
+            scheduledTimerWithTimeInterval()
+            startstop.setTitle("Stop", for: .normal)
+        }
+        isRunning = !isRunning
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print("it did tap it!")
+        print(marker.userData)
+        
+        let alert = UIAlertController(title: marker.title, message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+    
+        var imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: alert.view.bounds.size.width - 10 * 4.0, height: alert.view.bounds.size.width-20))
+        let url = URL(string: marker.userData as! String)
+        imageView.kf.setImage(with: url)
+        alert.view.addSubview(imageView)
+        var height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.70)
+        
+        alert.view.addConstraint(height)
+        self.present(alert, animated: true, completion: nil)
+        
+        return true
+    }
 }

@@ -26,6 +26,7 @@
 		478AB137206401400077649F /* CircularProgressClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AB136206401400077649F /* CircularProgressClock.swift */; };
 		478AB13B206401CE0077649F /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AB13A206401CE0077649F /* BorderLayer.swift */; };
 		478AB13D206402160077649F /* CircularProgressClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478AB13C206402160077649F /* CircularProgressClock.xib */; };
+		47B5C0322068FE1D009F4CA4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5C0312068FE1D009F4CA4 /* Camera.swift */; };
 		501F19876F1878FDF4591504 /* Pods_Rain_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C6EEC991922CE821FD5885 /* Pods_Rain_Radar.framework */; };
 		759C953B9002815C48D333DB /* Pods_Rain_RadarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		478AB136206401400077649F /* CircularProgressClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressClock.swift; sourceTree = "<group>"; };
 		478AB13A206401CE0077649F /* BorderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		478AB13C206402160077649F /* CircularProgressClock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressClock.xib; sourceTree = "<group>"; };
+		47B5C0312068FE1D009F4CA4 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296EB8FCB70B231FD847C2F /* Pods_Rain_RadarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935C424F54C4F198C5D4947 /* Pods-Rain RadarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rain RadarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rain RadarUITests/Pods-Rain RadarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				470453CD2053E25100C3082E /* ViewControllerTableViewCell.swift */,
 				477EFECA204F0287004F22F6 /* ViewController.swift */,
 				470453DD20542F0E00C3082E /* ViewControllerCountry.swift */,
+				47B5C0312068FE1D009F4CA4 /* Camera.swift */,
 				477EFECF204F0287004F22F6 /* Assets.xcassets */,
 				477EFED1204F0287004F22F6 /* LaunchScreen.storyboard */,
 				477EFED4204F0287004F22F6 /* Info.plist */,
@@ -485,13 +488,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rain Radar/Pods-Rain Radar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -510,6 +519,7 @@
 				478AB137206401400077649F /* CircularProgressClock.swift in Sources */,
 				477EFEC9204F0287004F22F6 /* AppDelegate.swift in Sources */,
 				470453CE2053E25100C3082E /* ViewControllerTableViewCell.swift in Sources */,
+				47B5C0322068FE1D009F4CA4 /* Camera.swift in Sources */,
 				470453DE20542F0E00C3082E /* ViewControllerCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

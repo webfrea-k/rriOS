@@ -136,9 +136,18 @@
                                             <action selector="back:" destination="qWg-EA-fa4" eventType="touchUpInside" id="4kG-qW-A0z"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCR-WF-0mE">
+                                        <rect key="frame" x="228" y="18" width="61" height="30"/>
+                                        <state key="normal" title="Cameras"/>
+                                        <connections>
+                                            <action selector="cameras:" destination="qWg-EA-fa4" eventType="touchUpInside" id="cTr-Th-9MW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="TDK-1U-WAZ" firstAttribute="leading" secondItem="nCR-WF-0mE" secondAttribute="trailing" constant="33" id="8v3-16-EcB"/>
+                                    <constraint firstAttribute="bottom" secondItem="nCR-WF-0mE" secondAttribute="bottom" constant="19" id="9TN-pg-lYz"/>
                                     <constraint firstAttribute="bottom" secondItem="TDK-1U-WAZ" secondAttribute="bottom" constant="21" id="RC0-ga-Fhm"/>
                                     <constraint firstAttribute="height" constant="67" id="erb-87-c18"/>
                                     <constraint firstAttribute="trailing" secondItem="TDK-1U-WAZ" secondAttribute="trailing" constant="21" id="ren-KX-3q0"/>
