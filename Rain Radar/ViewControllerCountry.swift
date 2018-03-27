@@ -20,8 +20,10 @@ var arrayTimes = [String]()
 var ind = 0
 var startstop: UIButton?
 var displaycamras: UIButton?
+var recenter: UIButton?
 var circularprogressclock: CircularProgressClock?
 
+let buttonsize: Int = 50
 let southWest = CLLocationCoordinate2D(latitude: 47.407, longitude: 17.44)
 let northEast = CLLocationCoordinate2D(latitude: 44.657, longitude: 12.1)
 let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
@@ -42,24 +44,34 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
         self.mapview.camera = camera
         self.mapview.delegate = self
         
-        
-        startstop = UIButton(frame: CGRect(x: self.view.bounds.width-80, y: self.view.bounds.height-200, width: 100, height: 100))
+        // Buttons
+        startstop = UIButton(frame: CGRect(x: self.view.bounds.width-140, y: self.view.bounds.height-200, width: 100, height: 100))
         startstop?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
         startstop?.addTarget(self, action: #selector(startstopButtonAction), for: .touchUpInside)
         if var image = UIImage(named: "stop_icon.png") {
-            image =  image.resizeImage(targetSize: CGSize(width: 60, height: 60))
+            image =  image.resizeImage(targetSize: CGSize(width: buttonsize, height: buttonsize))
             startstop?.setImage(image, for: .normal)
         }
         self.view.addSubview(startstop!)
+        
+        recenter = UIButton(frame: CGRect(x: self.view.bounds.width-80, y: self.view.bounds.height-200, width: 100, height: 100))
+        recenter?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
+        recenter?.addTarget(self, action: #selector(recenterButtonAction), for: .touchUpInside)
+        if var image = UIImage(named: "location_button.png") {
+            image =  image.resizeImage(targetSize: CGSize(width: buttonsize, height: buttonsize))
+            recenter?.setImage(image, for: .normal)
+        }
+        self.view.addSubview(recenter!)
         
         displaycamras = UIButton(frame: CGRect(x: self.view.bounds.width-80, y: self.view.bounds.height-260, width: 100, height: 100))
         displaycamras?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
         displaycamras?.addTarget(self, action: #selector(camerasButtonAction), for: .touchUpInside)
         if var image = UIImage(named: "slo_cctv") {
-            image =  image.resizeImage(targetSize: CGSize(width: 60, height: 60))
+            image =  image.resizeImage(targetSize: CGSize(width: buttonsize, height: buttonsize))
             displaycamras?.setImage(image, for: .normal)
         }
         self.view.addSubview(displaycamras!)
+        // Buttons - end
         
         circularprogressclock = CircularProgressClock(frame: CGRect(x: self.view.bounds.width/2-65/2, y: self.view.bounds.height-220+65/2, width: 65, height: 65))
         self.view.addSubview(circularprogressclock!)
@@ -68,6 +80,11 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
 
     @objc func startstopButtonAction(sender: UIButton!) {
         startStopAction()
+    }
+    
+    @objc func recenterButtonAction(sender: UIButton!) {
+        let camera = GMSCameraPosition.camera(withLatitude: 46.018851, longitude: 14.675335, zoom: 7.1)
+        self.mapview.camera = camera
     }
     @objc func camerasButtonAction(sender: UIButton!) {
         startStopAction()
@@ -242,4 +259,3 @@ extension UIImage {
         return newImage!
     }
 }
-
