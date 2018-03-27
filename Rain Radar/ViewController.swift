@@ -66,7 +66,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "show_country", sender: self)
+        timer.invalidate()
     }
    
 }

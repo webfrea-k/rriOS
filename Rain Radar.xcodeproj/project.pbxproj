@@ -27,6 +27,9 @@
 		478AB13B206401CE0077649F /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AB13A206401CE0077649F /* BorderLayer.swift */; };
 		478AB13D206402160077649F /* CircularProgressClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478AB13C206402160077649F /* CircularProgressClock.xib */; };
 		47B5C0322068FE1D009F4CA4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5C0312068FE1D009F4CA4 /* Camera.swift */; };
+		47B5C039206A4E43009F4CA4 /* start_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 47B5C037206A4E43009F4CA4 /* start_icon.png */; };
+		47B5C03A206A4E43009F4CA4 /* stop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 47B5C038206A4E43009F4CA4 /* stop_icon.png */; };
+		47B5C03E206A5187009F4CA4 /* slo_cctv.png in Resources */ = {isa = PBXBuildFile; fileRef = 47B5C03D206A5187009F4CA4 /* slo_cctv.png */; };
 		501F19876F1878FDF4591504 /* Pods_Rain_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C6EEC991922CE821FD5885 /* Pods_Rain_Radar.framework */; };
 		759C953B9002815C48D333DB /* Pods_Rain_RadarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 		478AB13A206401CE0077649F /* BorderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		478AB13C206402160077649F /* CircularProgressClock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressClock.xib; sourceTree = "<group>"; };
 		47B5C0312068FE1D009F4CA4 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		47B5C037206A4E43009F4CA4 /* start_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_icon.png; path = ../../../../Downloads/start_icon.png; sourceTree = "<group>"; };
+		47B5C038206A4E43009F4CA4 /* stop_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop_icon.png; path = ../../../../Downloads/stop_icon.png; sourceTree = "<group>"; };
+		47B5C03D206A5187009F4CA4 /* slo_cctv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slo_cctv.png; sourceTree = "<group>"; };
 		5238C5FF5118000611E7FBDE /* Pods_Rain_RadarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296EB8FCB70B231FD847C2F /* Pods_Rain_RadarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rain_RadarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935C424F54C4F198C5D4947 /* Pods-Rain RadarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rain RadarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rain RadarUITests/Pods-Rain RadarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +159,9 @@
 			children = (
 				470453D92053F77100C3082E /* Hungary-icon.png */,
 				470453CB2053E0B700C3082E /* Slovenia-icon.png */,
+				47B5C037206A4E43009F4CA4 /* start_icon.png */,
+				47B5C038206A4E43009F4CA4 /* stop_icon.png */,
+				47B5C03D206A5187009F4CA4 /* slo_cctv.png */,
 				470453D32053F74B00C3082E /* Austria-icon.png */,
 				470453D42053F74B00C3082E /* Croatia-icon.png */,
 				470453D12053F74B00C3082E /* Italy-icon.png */,
@@ -318,13 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				477EFED3204F0287004F22F6 /* LaunchScreen.storyboard in Resources */,
+				47B5C039206A4E43009F4CA4 /* start_icon.png in Resources */,
 				470453D62053F74B00C3082E /* Slovenia-icon.png in Resources */,
+				47B5C03A206A4E43009F4CA4 /* stop_icon.png in Resources */,
 				477EFED0204F0287004F22F6 /* Assets.xcassets in Resources */,
 				470453D72053F74B00C3082E /* Austria-icon.png in Resources */,
 				470453D82053F74B00C3082E /* Croatia-icon.png in Resources */,
 				477EFECE204F0287004F22F6 /* Main.storyboard in Resources */,
 				478AB13D206402160077649F /* CircularProgressClock.xib in Resources */,
 				470453CC2053E0B700C3082E /* Slovenia-icon.png in Resources */,
+				47B5C03E206A5187009F4CA4 /* slo_cctv.png in Resources */,
 				470453D52053F74B00C3082E /* Italy-icon.png in Resources */,
 				470453DA2053F77100C3082E /* Hungary-icon.png in Resources */,
 			);
