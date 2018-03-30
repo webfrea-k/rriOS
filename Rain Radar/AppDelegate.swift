@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyDT3zqY5EPONqMbiNP-4f4tkRV5DiAnPmc")
+        // Use Firebase library to configure APIs.
+        FirebaseApp.configure()
+        // Initialize the Google Mobile Ads SDK.
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-9883575696396484~5339648055")
+        //Test
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
         return true
     }
 

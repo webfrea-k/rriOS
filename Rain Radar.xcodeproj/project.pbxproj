@@ -16,6 +16,7 @@
 		470453D82053F74B00C3082E /* Croatia-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 470453D42053F74B00C3082E /* Croatia-icon.png */; };
 		470453DA2053F77100C3082E /* Hungary-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 470453D92053F77100C3082E /* Hungary-icon.png */; };
 		470453DE20542F0E00C3082E /* ViewControllerCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470453DD20542F0E00C3082E /* ViewControllerCountry.swift */; };
+		47652D22206D161F00DA6584 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47652D21206D161E00DA6584 /* GoogleService-Info.plist */; };
 		477EFEC9204F0287004F22F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFEC8204F0287004F22F6 /* AppDelegate.swift */; };
 		477EFECB204F0287004F22F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EFECA204F0287004F22F6 /* ViewController.swift */; };
 		477EFECE204F0287004F22F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477EFECC204F0287004F22F6 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		470453D42053F74B00C3082E /* Croatia-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Croatia-icon.png"; sourceTree = "<group>"; };
 		470453D92053F77100C3082E /* Hungary-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hungary-icon.png"; sourceTree = "<group>"; };
 		470453DD20542F0E00C3082E /* ViewControllerCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCountry.swift; sourceTree = "<group>"; };
+		47652D21206D161E00DA6584 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		477EFEC5204F0287004F22F6 /* Rain Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rain Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		477EFEC8204F0287004F22F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		477EFECA204F0287004F22F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				478AB136206401400077649F /* CircularProgressClock.swift */,
 				478AB13C206402160077649F /* CircularProgressClock.xib */,
 				478AB13A206401CE0077649F /* BorderLayer.swift */,
+				47652D21206D161E00DA6584 /* GoogleService-Info.plist */,
 			);
 			path = "Rain Radar";
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				47B5C040206A529A009F4CA4 /* location_button.png in Resources */,
 				478AB13D206402160077649F /* CircularProgressClock.xib in Resources */,
 				47B5C049206B9A3C009F4CA4 /* slo_hail.png in Resources */,
+				47652D22206D161F00DA6584 /* GoogleService-Info.plist in Resources */,
 				470453CC2053E0B700C3082E /* Slovenia-icon.png in Resources */,
 				47B5C03E206A5187009F4CA4 /* slo_cctv.png in Resources */,
 				470453D52053F74B00C3082E /* Italy-icon.png in Resources */,
@@ -522,16 +526,20 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -722,7 +730,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Rain Radar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-Radar";
+				PRODUCT_BUNDLE_IDENTIFIER = webfreak.si.rainradarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -737,7 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Rain Radar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "webfreak.si.Rain-Radar";
+				PRODUCT_BUNDLE_IDENTIFIER = webfreak.si.rainradarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -12,6 +12,7 @@ import Kingfisher
 import CircleProgressBar
 import Alamofire
 import AlamofireObjectMapper
+import GoogleMobileAds
 
 var timer = Timer()
 var isRunning = true
@@ -25,17 +26,35 @@ var rainlayer: UIButton?
 var cloudslayer: UIButton?
 var haillayer: UIButton?
 var circularprogressclock: CircularProgressClock?
-
+var adBannerView: GADBannerView?
 let buttonsize: Int = 50
 let southWest = CLLocationCoordinate2D(latitude: 47.407, longitude: 17.44)
 let northEast = CLLocationCoordinate2D(latitude: 44.657, longitude: 12.1)
 let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
 
-class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
-  
-    @IBOutlet weak var bottomview: UIView!
-    @IBOutlet weak var mapview: GMSMapView!
+class ViewControllerCountry: UIViewController, GMSMapViewDelegate,GADBannerViewDelegate {
     
+    
+    
+    
+    @IBOutlet weak var adview: UIView!
+    @IBOutlet weak var mapview: GMSMapView!
+    @IBAction func viewforecast(_ sender: Any) {
+        let alert = UIAlertController(title: "Forecast for current location", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+        
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: alert.view.bounds.size.width - 10 * 4.0, height: alert.view.bounds.size.width-50))
+        let url = URL(string: "http://webservice-en-us.weeronline.nl/digits_map/Ljubljana/150/2018_03_29_m/weather_map/metric/463")
+        imageView.kf.setImage(with: url, options: [.forceRefresh])
+        alert.view.addSubview(imageView)
+        
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.55)
+        
+        alert.view.addConstraint(height)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +67,7 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
         self.mapview.delegate = self
         
         // Buttons
-        startstop = UIButton(frame: CGRect(x: self.view.bounds.width-100, y: self.view.bounds.height-215+65/2, width: CGFloat(buttonsize), height: CGFloat(buttonsize)))
+        startstop = UIButton(frame: CGRect(x: self.view.bounds.width-100, y: self.view.bounds.height-260+CGFloat(buttonsize)/2, width: CGFloat(buttonsize), height: CGFloat(buttonsize)))
         startstop?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
         startstop?.addTarget(self, action: #selector(startstopButtonAction), for: .touchUpInside)
         if var image = UIImage(named: "stop_icon.png") {
@@ -57,7 +76,7 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
         }
         self.view.addSubview(startstop!)
         
-        recenter = UIButton(frame: CGRect(x: self.view.bounds.width-50, y: self.view.bounds.height-215+65/2, width: CGFloat(buttonsize), height: CGFloat(buttonsize)))
+        recenter = UIButton(frame: CGRect(x: self.view.bounds.width-50, y: self.view.bounds.height-260+CGFloat(buttonsize)/2, width: CGFloat(buttonsize), height: CGFloat(buttonsize)))
         recenter?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
         recenter?.addTarget(self, action: #selector(recenterButtonAction), for: .touchUpInside)
         if var image = UIImage(named: "location_button.png") {
@@ -103,9 +122,14 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
         self.view.addSubview(displaycamras!)
         // Buttons - end
         
-        circularprogressclock = CircularProgressClock(frame: CGRect(x: self.view.bounds.width/2-65/2, y: self.view.bounds.height-220+65/2, width: 65, height: 65))
+        circularprogressclock = CircularProgressClock(frame: CGRect(x: self.view.bounds.width/2-65/2, y: self.view.bounds.height-270+CGFloat(buttonsize)/2, width: 65, height: 65))
         self.view.addSubview(circularprogressclock!)
-   
+        
+        adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView?.adUnitID = "ca-app-pub-9883575696396484/5311727898"
+        adBannerView?.delegate = self
+        adBannerView?.rootViewController = self
+        adBannerView?.load(GADRequest())
     }
 
     @objc func startstopButtonAction(sender: UIButton!) {
@@ -337,6 +361,18 @@ class ViewControllerCountry: UIViewController, GMSMapViewDelegate {
         
         return true
     }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Banner loaded successfully")
+        bannerView.frame = adview.frame 
+        adview.addSubview(bannerView)
+        
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("Fail to receive ads")
+        print(error)
+    }
 }
 
 extension UIImage {
@@ -367,3 +403,5 @@ extension UIImage {
         return newImage!
     }
 }
+
+

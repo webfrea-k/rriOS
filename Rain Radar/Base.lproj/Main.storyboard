@@ -116,14 +116,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYx-If-eg2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-vF-jw8" userLabel="bottomView">
-                                <rect key="frame" x="0.0" y="600" width="375" height="67"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-cY-rPB" userLabel="Bottomview">
+                                <rect key="frame" x="0.0" y="542" width="375" height="125"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-MS-eh4" userLabel="Adview">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="ZP6-39-zl8"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-tA-4Ef">
+                                        <rect key="frame" x="0.0" y="73" width="375" height="30"/>
+                                        <state key="normal" title="View forecast"/>
+                                        <connections>
+                                            <action selector="viewforecast:" destination="qWg-EA-fa4" eventType="touchUpInside" id="IQz-WE-sEN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.97422960069444442" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="erb-87-c18"/>
+                                    <constraint firstAttribute="trailing" secondItem="gTT-tA-4Ef" secondAttribute="trailing" id="2hF-So-ccJ"/>
+                                    <constraint firstItem="gTT-tA-4Ef" firstAttribute="leading" secondItem="fE8-cY-rPB" secondAttribute="leading" id="IYO-cG-qqC"/>
+                                    <constraint firstItem="hMo-MS-eh4" firstAttribute="leading" secondItem="fE8-cY-rPB" secondAttribute="leading" id="RLd-xZ-Dnm"/>
+                                    <constraint firstAttribute="trailing" secondItem="hMo-MS-eh4" secondAttribute="trailing" id="bkV-k6-3P6"/>
+                                    <constraint firstItem="gTT-tA-4Ef" firstAttribute="top" secondItem="hMo-MS-eh4" secondAttribute="bottom" constant="8" id="kOw-Ky-XQc"/>
+                                    <constraint firstItem="hMo-MS-eh4" firstAttribute="top" secondItem="fE8-cY-rPB" secondAttribute="top" id="wd0-JY-1rw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -132,16 +153,17 @@
                         <constraints>
                             <constraint firstItem="NYx-If-eg2" firstAttribute="trailing" secondItem="3bN-S0-ZYV" secondAttribute="trailing" id="5bg-Dq-5ON"/>
                             <constraint firstItem="NYx-If-eg2" firstAttribute="leading" secondItem="3bN-S0-ZYV" secondAttribute="leading" id="81z-xu-Slz"/>
-                            <constraint firstItem="DRy-vF-jw8" firstAttribute="bottom" secondItem="3bN-S0-ZYV" secondAttribute="bottom" id="DFu-v8-j5P"/>
-                            <constraint firstItem="DRy-vF-jw8" firstAttribute="leading" secondItem="3bN-S0-ZYV" secondAttribute="leading" id="biL-Bc-P9e"/>
-                            <constraint firstItem="DRy-vF-jw8" firstAttribute="top" secondItem="NYx-If-eg2" secondAttribute="bottom" constant="8" id="eEr-XD-cKa"/>
-                            <constraint firstItem="DRy-vF-jw8" firstAttribute="trailing" secondItem="3bN-S0-ZYV" secondAttribute="trailing" id="fvY-Y3-VWi"/>
+                            <constraint firstItem="fE8-cY-rPB" firstAttribute="leading" secondItem="3bN-S0-ZYV" secondAttribute="leading" id="9YX-Re-jeN"/>
+                            <constraint firstItem="fE8-cY-rPB" firstAttribute="trailing" secondItem="3bN-S0-ZYV" secondAttribute="trailing" id="LWP-nG-C9P"/>
+                            <constraint firstItem="fE8-cY-rPB" firstAttribute="bottom" secondItem="TMW-uc-ato" secondAttribute="bottom" id="bK6-b0-dSK"/>
                             <constraint firstItem="NYx-If-eg2" firstAttribute="top" secondItem="3bN-S0-ZYV" secondAttribute="top" id="hF8-4T-Ack"/>
+                            <constraint firstItem="fE8-cY-rPB" firstAttribute="top" secondItem="NYx-If-eg2" secondAttribute="bottom" id="nzh-o2-QEv"/>
+                            <constraint firstItem="3bN-S0-ZYV" firstAttribute="bottom" secondItem="NYx-If-eg2" secondAttribute="bottom" constant="125" id="yVI-6G-cip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3bN-S0-ZYV"/>
                     </view>
                     <connections>
-                        <outlet property="bottomview" destination="DRy-vF-jw8" id="sdd-R1-P5b"/>
+                        <outlet property="adview" destination="hMo-MS-eh4" id="yac-un-IR5"/>
                         <outlet property="mapview" destination="NYx-If-eg2" id="yOS-c2-9sl"/>
                     </connections>
                 </viewController>
